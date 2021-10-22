@@ -26,8 +26,8 @@ function playRound() {
   let computerSelection = computerPlay();
   let cpuChoice = computerSelection.toLowerCase();
 
-  console.log(choice);
-  console.log(cpuChoice);
+  console.log(`You choose ${choice}`S);
+  console.log(`Computer chooses ${cpuChoice}`);
   if (choice === 'rock' && cpuChoice === 'scissors') {
     points += 1;
     return 'You chose Rock, CPU chose Scissors, you win!';
