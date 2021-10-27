@@ -37,23 +37,25 @@ rock.addEventListener('click', () => {
     let cpuChoice = computerPlay();
     if (cpuChoice === 'Scissors') {
         answer = 'CPU picked Scissors! Rock beats Scissors, you win!';
+        display.style.backgroundColor = '#93ffa5'
     } else if (cpuChoice === 'Paper') {
          answer = 'CPU picked Paper! Paper covers Rock, you lose!';
+         display.style.backgroundColor = '#ff5c5c'
     } else {
          answer = 'CPU picked Rock! It\'s a draw!'
     }
     display.textContent = answer;
 });
 
-
 paper.addEventListener('click', () => {
     
     let cpuChoice = computerPlay();
     if (cpuChoice === 'Rock') {
         answer = 'CPU picked Rock! Paper covers Rock, you win!';
+        display.style.backgroundColor = '#93ffa5'
     } else if (cpuChoice === 'Scissors') {
         answer = 'CPU picked Scissors! Scissors cuts Paper, you lose!';
-
+        display.style.backgroundColor = '#ff5c5c'
     } else {
         answer = 'CPU picked Paper! It\'s a draw!';
     }
@@ -66,9 +68,10 @@ scissors.addEventListener('click', () => {
     let cpuChoice = computerPlay();
     if (cpuChoice === 'Paper') {
         answer = 'CPU picked Paper! Scissors cuts Paper, you win!';
+        display.style.backgroundColor = '#93ffa5'
     } else if (cpuChoice === 'Scissors') {
         answer = 'CPU picked Rock! Rock crushes Scissors, you lose!';
-
+        display.style.backgroundColor = '#ff5c5c'
     } else {
         answer = 'CPU picked Scissors! It\'s a draw!';
     }
