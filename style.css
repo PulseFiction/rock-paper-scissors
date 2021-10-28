@@ -48,6 +48,11 @@ body {
     
 }
 
+.game-end {
+    color: #fff;
+    font-size: 40px;
+}
+
 h2 {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
@@ -60,7 +65,7 @@ button {
     color: white;
     border-radius: 10px;
     font-size: 1.3rem;
-    transition: all 0.6s ease;
+    
     
 }
 .restart {
@@ -95,19 +100,19 @@ p {
 .rock:hover {
     color: #ff1e1e;
     background-color: #464646;
-    transform: scale(1.1);
+    
 }
 
 .paper:hover {
     background-color: #464646;
     color: #efff0b;
-    transform: scale(1.1);
+    
 }
 
 .scissors:hover {
     background-color: #464646;
     color: #0bb2ff;
-    transform: scale(1.1);
+    
 }
  
 @media screen and (max-width: 480px) {
