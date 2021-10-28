@@ -25,6 +25,7 @@ function computerPlay(){
   }
 };
 
+// DOM variables
 const rock = document.querySelector('.rock');
 const paper = document.querySelector('.paper');
 const scissors = document.querySelector('.scissors');
@@ -34,66 +35,76 @@ const cpuScore = document.querySelector('.cpu-score');
 const endGame = document.querySelector('.game-end');
 const reset = document.querySelector('.restart');
 
+// Globals
 let playerPoints = 0;
 let cpuPoints = 0;
+let rounds = 0;
 
+// Game function
 function playRound(){
   let playerChoice = this.textContent;
   let cpuChoice = computerPlay();
   
   
       if (playerChoice === 'Rock' && cpuChoice === 'Scissors') {
-      let answer = 'Rock beats Scissors, you won!'
-      display.textContent = answer
-      display.style.backgroundColor = '#93ffa5'
+      let answer = 'Rock beats Scissors, you won!';
+      display.textContent = answer;
+      display.style.backgroundColor = '#93ffa5';
       playerPoints += 1;
+      rounds += 1;
       playerScore.textContent = playerPoints;
        
       } else if (playerChoice === 'Scissors' && cpuChoice === 'Rock'){
-      let answer ='Rock beats Scissors, you lose!'
-      display.textContent = answer
-      display.style.backgroundColor = '#ff5c5c'
+      let answer ='Rock beats Scissors, you lose!';
+      display.textContent = answer;
+      display.style.backgroundColor = '#ff5c5c';
       cpuPoints += 1;
+      rounds += 1;
       cpuScore.textContent = cpuPoints;
       
       } else if (playerChoice === 'Scissors' && cpuChoice === 'Paper'){
-      let answer = 'Scissors beats Paper, you won!'
-      display.textContent = answer
-      display.style.backgroundColor = '#93ffa5'
-      playerPoints += 1
+      let answer = 'Scissors beats Paper, you won!';
+      display.textContent = answer;
+      display.style.backgroundColor = '#93ffa5';
+      playerPoints += 1;
+      rounds += 1;
       playerScore.textContent = playerPoints;
       
       } else if (playerChoice === 'Paper' && cpuChoice === 'Scissors'){
-      let answer = 'Scissors beats Paper, you lose!'
-      display.textContent = answer
-      display.style.backgroundColor = '#ff5c5c'
+      let answer = 'Scissors beats Paper, you lose!';
+      display.textContent = answer;
+      display.style.backgroundColor = '#ff5c5c';
       cpuPoints += 1;
+      rounds += 1;
       cpuScore.textContent = cpuPoints;
       
       } else if (playerChoice === 'Paper' && cpuChoice === 'Rock'){
-      let answer = 'Paper covers Rock, you win!'
-      display.textContent = answer
-      display.style.backgroundColor = '#93ffa5'
-      playerPoints += 1
+      let answer = 'Paper covers Rock, you win!';
+      display.textContent = answer;
+      display.style.backgroundColor = '#93ffa5';
+      playerPoints += 1;
+      rounds += 1;
       playerScore.textContent = playerPoints;
       
       } else if (playerChoice == 'Rock' && cpuChoice === 'Paper'){
-      let answer = 'Paper covers Rock, you lose!'
-      display.textContent = answer
-      display.style.backgroundColor = '#ff5c5c'
+      let answer = 'Paper covers Rock, you lose!';
+      display.textContent = answer;
+      display.style.backgroundColor = '#ff5c5c';
       cpuPoints += 1;
+      rounds += 1;
       cpuScore.textContent = cpuPoints;
 
       } else if (playerChoice === cpuChoice) {
-      let answer = 'Same choice! Go again!'
-      display.style.backgroundColor = '#fff'
-      display.textContent = answer
+      let answer = 'Same choice! Go again!';
+      display.style.backgroundColor = '#fff';
+      display.textContent = answer;
+      rounds += 1;
       
       }
   
   if (cpuPoints === 5 || playerPoints === 5){
-      endGame.textContent = 'That\'s the end of the game!'
-      reset.style.visibility = 'visible'
+      endGame.textContent = 'That\'s the end of the game!';
+      reset.style.visibility = 'visible';
       
       
   }
@@ -102,11 +113,12 @@ function playRound(){
   
 };
 
-
+// Restart function
 reset.addEventListener('click', () => {
   reset.style.visibility = 'hidden';
-  display.textContent = ''
-  display.style.backgroundColor = '#979797'
+  endGame.textContent = '';
+  display.textContent = '';
+  display.style.backgroundColor = '#979797';
   cpuPoints = 0;
   playerPoints = 0;
   cpuScore.textContent = cpuPoints;
@@ -115,12 +127,13 @@ reset.addEventListener('click', () => {
 
 });
 
-
+// Event Listeners
 rock.addEventListener('click', playRound);
 paper.addEventListener('click', playRound);
 scissors.addEventListener('click', playRound);
 
 
+// -------- Old code -----------------------------------------
 
 /*  Working function in case I break the original
 
